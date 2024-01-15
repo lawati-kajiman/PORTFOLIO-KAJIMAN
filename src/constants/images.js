@@ -42,6 +42,13 @@ import dapper from "../assets/dapper orm.jpeg";
 import csharp from "../assets/C-Sharp-Tutorials.png";
 import postgresql from "../assets/postgresql.png";
 
+import kaji1 from "../assets/kaji1.png";
+import kaji2 from "../assets/kaji2.jpg";
+import kaji10 from "../assets/kaji10.jpg";
+import kaji12 from "../assets/kaji12.jpg";
+import kaji19 from "../assets/kaji19.jpg";
+import kajireal from "../assets/kaji_real.jpg";
+
 export default {
   email,
   mobile,
@@ -82,4 +89,10 @@ export default {
   github,
   dapper,
   dotnet,
+  kaji1,
+  kaji10,
+  kaji12,
+  kaji19,
+  kaji2,
+  kajireal,
 };

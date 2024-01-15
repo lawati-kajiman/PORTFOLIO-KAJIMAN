@@ -29,31 +29,31 @@ const testimonials = [
   {
     name: "Roman ojha ",
     company: "Numayou",
-    imgUrl: images.react,
+    imgUrl: images.kaji1,
     feedback: "This shit is good",
   },
   {
     name: "ujwal ray bhatta ",
     company: "alis",
-    imgUrl: images.react,
+    imgUrl: images.kaji10,
     feedback: "this look perfectly fine",
   },
   {
     name: "deepak jaiswal",
     company: "Numayou",
-    imgUrl: images.react,
+    imgUrl: images.kaji12,
     feedback: "I am glad he made this",
   },
   {
     name: "kajiman lawati",
     company: "Numayou",
-    imgUrl: images.react,
+    imgUrl: images.kaji19,
     feedback: "This is me ",
   },
   {
     name: "prafulla",
     company: "TIA",
-    imgUrl: images.react,
+    imgUrl: images.kaji2,
     feedback: "Bong",
   },
 ];
