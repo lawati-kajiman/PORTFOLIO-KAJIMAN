@@ -1,61 +1,128 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
+import React from "react";
+import { motion } from "framer-motion";
+import ReactTooltip from "react-tooltip";
 
-import { AppWrap, MotionWrap} from '../../wrapper';
-import './Skills.scss';
-import { images } from '../../constants';
+import { AppWrap, MotionWrap } from "../../wrapper";
+import "./Skills.scss";
+import { images } from "../../constants";
 
-const skills=[
+const skills = [
   {
-    name:"Typescript",bgColor:"var(--primary-color)",icon:images.typescript
+    name: ".Net",
+    bgColor: "var(--primary-color)",
+    icon: images.typescript,
   },
   {
-    name:"figma",bgColor:"var(--primary-color)",icon:images.figma
+    name: "figma",
+    bgColor: "var(--primary-color)",
+    icon: images.figma,
   },
   {
-    name:"css",bgColor:"var(--primary-color)",icon:images.css
+    name: "css",
+    bgColor: "var(--primary-color)",
+    icon: images.css,
   },
   {
-    name:"Html",bgColor:"var(--primary-color)",icon:images.html
+    name: "Html",
+    bgColor: "var(--primary-color)",
+    icon: images.html,
   },
   {
-    name:"c++",bgColor:"var(--primary-color)",icon:images.cpp
+    name: "c sharp",
+    bgColor: "var(--primary-color)",
+    icon: images.cpp,
   },
   {
-    name:"flutter",bgColor:"var(--primary-color)",icon:images.flutter
+    name: "javascript",
+    bgColor: "var(--primary-color)",
+    icon: images.javascript,
   },
   {
-    name:"javascript",bgColor:"var(--primary-color)",icon:images.javascript
+    name: "Postgre Sql",
+    bgColor: "var(--primary-color)",
+    icon: images.node,
   },
   {
-    name:"Node js",bgColor:"var(--primary-color)",icon:images.node
+    name: "Sass",
+    bgColor: "var(--primary-color)",
+    icon: images.sass,
   },
   {
-    name:"Sass",bgColor:"var(--primary-color)",icon:images.sass
+    name: "Jira",
+    bgColor: "var(--primary-color)",
+    icon: images.typescript,
   },
   {
-    name:"Typescript",bgColor:"var(--primary-color)",icon:images.typescript
+    name: "React",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
   },
   {
-    name:"React",bgColor:"var(--primary-color)",icon:images.react
-  }
-]
+    name: "Project Management",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
+  },
+  {
+    name: "Git",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
+  },
+  {
+    name: "GitHub",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
+  },
+  {
+    name: "Dapper(ORM)",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
+  },
+  {
+    name: "Design Pattern",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
+  },
+  {
+    name: "Clean Architecture",
+    bgColor: "var(--primary-color)",
+    icon: images.react,
+  },
+];
 
-const experiences=[
+const experiences = [
   {
-    year:'2019', name:"Wordpress",company:"Numayou",desc:"Online shopping app",
+    year: "2019",
+    name: "Wordpress",
+    company: "Numayou",
+    desc: "Online shopping app",
   },
   {
-    year:'2020',name:"Vending Machine",company:"Manav Rachna University",desc:"virtual vending machine as a project"
+    year: "2020",
+    name: "Vending Machine",
+    company: "Manav Rachna University",
+    desc: "virtual vending machine as a project",
   },
   {
-    year:'2021',name:"travel web (PWA)",company:"Manav Rachna University",desc:"progressive web application"
-  }
+    year: "2021",
+    name: "travel web (PWA)",
+    company: "Manav Rachna University",
+    desc: "progressive web application",
+  },
+  {
+    year: "2022",
+    name: "Portfolio",
+    company: "Kaji Man Portfolio",
+    desc: "Self Portfolio For MySelf Using React and Scss",
+  },
+  {
+    year: "2023",
+    name: "TradeFlow",
+    company: "WaterFlow Technology",
+    desc: "InHouse System For Every Broker Company To Keep The Record Of The Client And Transactions Uisng .net core as Backend And Next.js as Frontend ",
+  },
 ];
 
 const Skills = () => {
-
   return (
     <>
       <h2 className="head-text">Skills & Experiences</h2>
@@ -67,12 +134,10 @@ const Skills = () => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.name}
-            >
+              key={skill.name}>
               <div
                 className="app__flex"
-                style={{ backgroundColor: skill.bgColor }}
-              >
+                style={{ backgroundColor: skill.bgColor }}>
                 <img src={skill.icon} alt={skill.name} />
               </div>
               <p className="p-text">{skill.name}</p>
@@ -82,38 +147,35 @@ const Skills = () => {
         <div className="app__skills-exp">
           {experiences.map((experience) => (
             <>
-            <motion.div
-              className="app__skills-exp-item"
-              key={experience.year}
-            >
-              <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
-              </div>
-            </motion.div>
-               <motion.div className="app__skills-exp-works">
-                  <>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
-                      data-tip
-                      data-for={experience.name}
-                      key={experience.name}
-                    >
-                      <h4 className="bold-text">{experience.name}</h4>
-                      <p className="p-text">{experience.company}</p>
-                    </motion.div>
-                    <ReactTooltip
-                      id={experience.name}
-                      effect="solid"
-                      arrowColor="#fff"
-                      className="skills-tooltip"
-                    >
-                      {experience.desc}
-                    </ReactTooltip>
-                  </>
+              <motion.div
+                className="app__skills-exp-item"
+                key={experience.year}>
+                <div className="app__skills-exp-year">
+                  <p className="bold-text">{experience.year}</p>
+                </div>
               </motion.div>
-          </>
+              <motion.div className="app__skills-exp-works">
+                <>
+                  <motion.div
+                    whileInView={{ opacity: [0, 1] }}
+                    transition={{ duration: 0.5 }}
+                    className="app__skills-exp-work"
+                    data-tip
+                    data-for={experience.name}
+                    key={experience.name}>
+                    <h4 className="bold-text">{experience.name}</h4>
+                    <p className="p-text">{experience.company}</p>
+                  </motion.div>
+                  <ReactTooltip
+                    id={experience.name}
+                    effect="solid"
+                    arrowColor="#fff"
+                    className="skills-tooltip">
+                    {experience.desc}
+                  </ReactTooltip>
+                </>
+              </motion.div>
+            </>
           ))}
         </div>
       </div>
@@ -122,5 +184,7 @@ const Skills = () => {
 };
 
 export default AppWrap(
-  MotionWrap(Skills,'app__skills'),
-'skills',"app__whitebg");
+  MotionWrap(Skills, "app__skills"),
+  "skills",
+  "app__whitebg"
+);
