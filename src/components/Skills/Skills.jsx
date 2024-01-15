@@ -10,7 +10,7 @@ const skills = [
   {
     name: ".Net",
     bgColor: "var(--primary-color)",
-    icon: images.typescript,
+    icon: images.dotnet,
   },
   {
     name: "figma",
@@ -30,7 +30,7 @@ const skills = [
   {
     name: "c sharp",
     bgColor: "var(--primary-color)",
-    icon: images.cpp,
+    icon: images.csharp,
   },
   {
     name: "javascript",
@@ -40,7 +40,7 @@ const skills = [
   {
     name: "Postgre Sql",
     bgColor: "var(--primary-color)",
-    icon: images.node,
+    icon: images.postgresql,
   },
   {
     name: "Sass",
@@ -50,7 +50,7 @@ const skills = [
   {
     name: "Jira",
     bgColor: "var(--primary-color)",
-    icon: images.typescript,
+    icon: images.jira,
   },
   {
     name: "React",
@@ -60,32 +60,32 @@ const skills = [
   {
     name: "Project Management",
     bgColor: "var(--primary-color)",
-    icon: images.react,
+    icon: images.jira,
   },
   {
     name: "Git",
     bgColor: "var(--primary-color)",
-    icon: images.react,
+    icon: images.git,
   },
   {
     name: "GitHub",
     bgColor: "var(--primary-color)",
-    icon: images.react,
+    icon: images.github,
   },
   {
     name: "Dapper(ORM)",
     bgColor: "var(--primary-color)",
-    icon: images.react,
+    icon: images.dapper,
   },
   {
     name: "Design Pattern",
     bgColor: "var(--primary-color)",
-    icon: images.react,
+    icon: images.dotnet,
   },
   {
     name: "Clean Architecture",
     bgColor: "var(--primary-color)",
-    icon: images.react,
+    icon: images.dotnet,
   },
 ];
 

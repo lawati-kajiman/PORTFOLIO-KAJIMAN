@@ -1,43 +1,62 @@
-import React, { useState} from 'react';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { motion } from "framer-motion";
 
-import { AppWrap, MotionWrap } from '../../wrapper';
-import './Testimonial.scss';
-import { images } from '../../constants';
+import { AppWrap, MotionWrap } from "../../wrapper";
+import "./Testimonial.scss";
+import { images } from "../../constants";
 
-const brands=[
+const brands = [
   {
-    imgUrl:images.amazon,name:"Amazon"
+    imgUrl: images.amazon,
+    name: "Amazon",
   },
   {
-    imgUrl:images.bolt,name:"Bolt"
+    imgUrl: images.bolt,
+    name: "Bolt",
   },
   {
-    imgUrl:images.adidas,name:"Adidas"
+    imgUrl: images.adidas,
+    name: "Adidas",
   },
   {
-    imgUrl:images.nb,name:"New balance"
-  }
-]
+    imgUrl: images.nb,
+    name: "New balance",
+  },
+];
 
-const testimonials=[
+const testimonials = [
   {
-    name:"Roman ojha ",company:"Numayou",imgUrl:images.kaji1,feedback:"This shit is good"
+    name: "Roman ojha ",
+    company: "Numayou",
+    imgUrl: images.react,
+    feedback: "This shit is good",
   },
   {
-    name:"ujwal ray bhatta ",company:"alis",imgUrl:images.kaji10,feedback:"this look perfectly fine"
+    name: "ujwal ray bhatta ",
+    company: "alis",
+    imgUrl: images.react,
+    feedback: "this look perfectly fine",
   },
   {
-    name:"deepak jaiswal",company:"Numayou",imgUrl:images.kaji19,feedback:"I am glad he made this"
+    name: "deepak jaiswal",
+    company: "Numayou",
+    imgUrl: images.react,
+    feedback: "I am glad he made this",
   },
   {
-    name:"kajiman lawati",company:"Numayou",imgUrl:images.kaji12,feedback:"This is me "
+    name: "kajiman lawati",
+    company: "Numayou",
+    imgUrl: images.react,
+    feedback: "This is me ",
   },
   {
-    name:"prafulla",company:"TIA",imgUrl:images.kaji2,feedback:"Bong"
-  }
-]
+    name: "prafulla",
+    company: "TIA",
+    imgUrl: images.react,
+    feedback: "Bong",
+  },
+];
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,7 +70,11 @@ const Testimonial = () => {
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">
-            <img src={testimonials[currentIndex].imgUrl} alt={testimonials[currentIndex].name} />
+            <img
+              className="app__testimonial-img"
+              src={testimonials[currentIndex].imgUrl}
+              alt={testimonials[currentIndex].name}
+            />
             <div className="app__testimonial-content">
               <p className="p-text">{testimonials[currentIndex].feedback}</p>
               <div>
@@ -62,34 +85,38 @@ const Testimonial = () => {
           </div>
 
           <div className="app__testimonial-btns app__flex">
-            <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
+            <div
+              className="app__flex"
+              onClick={() =>
+                handleClick(
+                  currentIndex === 0
+                    ? testimonials.length - 1
+                    : currentIndex - 1
+                )
+              }>
               <HiChevronLeft />
             </div>
 
-            <div className="app__flex" onClick={() => handleClick(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)}>
+            <div
+              className="app__flex"
+              onClick={() =>
+                handleClick(
+                  currentIndex === testimonials.length - 1
+                    ? 0
+                    : currentIndex + 1
+                )
+              }>
               <HiChevronRight />
             </div>
           </div>
         </>
       )}
-
-      <div className="app__testimonial-brands app__flex">
-        {brands.map((brand) => (
-          <motion.div
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5, type: 'tween' }}
-            key={brand._id}
-          >
-            <img src={brand.imgUrl} alt={brand.name} />
-          </motion.div>
-        ))}
-      </div>
     </>
   );
 };
 
 export default AppWrap(
-  MotionWrap(Testimonial, 'app__testimonial'),
-  'testimonial',
-  'app__primarybg',
+  MotionWrap(Testimonial, "app__testimonial"),
+  "testimonial",
+  "app__primarybg"
 );

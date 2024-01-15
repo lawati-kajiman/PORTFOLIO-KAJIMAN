@@ -51,7 +51,7 @@ const works = [
 ];
 
 const Work = () => {
-  const [filterWork, setFilterWork] = useState([]);
+  const [filterWork, setFilterWork] = useState(works);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 

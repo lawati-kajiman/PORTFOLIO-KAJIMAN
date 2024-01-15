@@ -7,17 +7,19 @@ import { images } from "../../constants";
 const abouts = [
   {
     title: "Web Development",
-    description: "I am a good Web Developer.",
+    description:
+      "I have a good experience working with in the web development industry",
     imgUrl: images.about01,
   },
   {
     title: "UI/UX",
-    description: "I am a good ui/ux designer.",
+    description: "Good Design Means Good Business",
     imgUrl: images.about02,
   },
   {
     title: "Figma",
-    description: "I have quite good experience in graphic design.",
+    description:
+      "I have quite good experience in graphic design.Working with Figma and photoshop was good until I had A full time job as a backend developer",
     imgUrl: images.about03,
   },
   {
