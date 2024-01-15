@@ -35,6 +35,12 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 
+import kaji1 from '../assets/kaji1.png';
+import kaji2 from '../assets/kaji2.jpg';
+import kaji10 from '../assets/kaji10.jpg';
+import kaji12 from '../assets/kaji12.jpg';
+import kaji19 from '../assets/kaji19.jpg';
+
 export default {
   email,
   mobile,
@@ -69,4 +75,9 @@ export default {
   nb,
   skype,
   spotify,
+  kaji1,
+  kaji2,
+  kaji10,
+  kaji12,
+  kaji19,
 };

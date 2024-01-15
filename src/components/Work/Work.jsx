@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
+import { images } from '../../constants';
 
 import { AppWrap,MotionWrap} from '../../wrapper';
-import { urlFor, client } from '../../client';
 import './Work.scss';
 
+const works=[
+  {
+    title:"Progressive web app",description:"Made an pwa web app as project for my college assignment ",imgUrl: images.adidas,projectLink:"",codeLink:"",tags:"Web App"
+  },
+  {
+    title:"Bolt",description:"fully functional app for shopping and customizing ", imgUrl:images.bolt,projectLink:"",codeLink:"",tags:"Mobile App"
+  },
+  {
+    title:"Portfolio",description:"Portfolio is a fully functional website ",imgUrl:images.about03,projectLink:"",codeLink:"",tags:"React JS"
+  },
+  {
+    title:"Numayou",description:"Developing app will always be a good thing for me and having a good design is like a cherry on pie .",imgUrl:images.amazon,projectLink:"",codeLink:"",tags:"UI/UX"
+  } 
+]
+
 const Work = () => {
-  const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-
-  useEffect(() => {
-    const query = '*[_type == "works"]';
-
-    client.fetch(query).then((data) => {
-      setWorks(data);
-      setFilterWork(data);
-    });
-  }, []);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -62,7 +67,7 @@ const Work = () => {
             <div
               className="app__work-img app__flex"
             >
-              <img src={urlFor(work.imgUrl)} alt={work.name} />
+              <img src={work.imgUrl} alt={work.name} />
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
@@ -98,7 +103,7 @@ const Work = () => {
               <p className="p-text" style={{ marginTop: 10 }}>{work.description}</p>
 
               <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tags[0]}</p>
+                <p className="p-text">{work.tags}</p>
               </div>
             </div>
           </div>

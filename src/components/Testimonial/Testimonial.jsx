@@ -1,39 +1,57 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
 import './Testimonial.scss';
+import { images } from '../../constants';
+
+const brands=[
+  {
+    imgUrl:images.amazon,name:"Amazon"
+  },
+  {
+    imgUrl:images.bolt,name:"Bolt"
+  },
+  {
+    imgUrl:images.adidas,name:"Adidas"
+  },
+  {
+    imgUrl:images.nb,name:"New balance"
+  }
+]
+
+const testimonials=[
+  {
+    name:"Roman ojha ",company:"Numayou",imgUrl:images.kaji1,feedback:"This shit is good"
+  },
+  {
+    name:"ujwal ray bhatta ",company:"alis",imgUrl:images.kaji10,feedback:"this look perfectly fine"
+  },
+  {
+    name:"deepak jaiswal",company:"Numayou",imgUrl:images.kaji19,feedback:"I am glad he made this"
+  },
+  {
+    name:"kajiman lawati",company:"Numayou",imgUrl:images.kaji12,feedback:"This is me "
+  },
+  {
+    name:"prafulla",company:"TIA",imgUrl:images.kaji2,feedback:"Bong"
+  }
+]
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [testimonials, setTestimonials] = useState([]);
-  const [brands, setBrands] = useState([]);
 
   const handleClick = (index) => {
     setCurrentIndex(index);
   };
-
-  useEffect(() => {
-    const query = '*[_type == "testimonials"]';
-    const brandsQuery = '*[_type == "brands"]';
-
-    client.fetch(query).then((data) => {
-      setTestimonials(data);
-    });
-
-    client.fetch(brandsQuery).then((data) => {
-      setBrands(data);
-    });
-  }, []);
 
   return (
     <>
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">
-            <img src={urlFor(testimonials[currentIndex].imgurl)} alt={testimonials[currentIndex].name} />
+            <img src={testimonials[currentIndex].imgUrl} alt={testimonials[currentIndex].name} />
             <div className="app__testimonial-content">
               <p className="p-text">{testimonials[currentIndex].feedback}</p>
               <div>
@@ -62,7 +80,7 @@ const Testimonial = () => {
             transition={{ duration: 0.5, type: 'tween' }}
             key={brand._id}
           >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            <img src={brand.imgUrl} alt={brand.name} />
           </motion.div>
         ))}
       </div>
